@@ -1,0 +1,34 @@
+<ion-view title="AUDIO" id="page3">
+    <ion-content padding="true" class="has-header">
+        <p id="aUDIO-markdown5" style="color:#000000;">audio page</p>
+
+      <div class="lists" >
+
+          <div class="item item-divider"> August </div>
+        <a ng-repeat="audioDetails in audioAugust" class="item item-thumbnail-left" style="font-size: x-small;">
+          <img src="{{audioDetails.Avatar}}">
+          <h2> Preacher:{{audioDetails.Preacher}}</h2>
+          <h2> Topic: {{audioDetails.Topic}}</h2>
+          <h2> Date: {{audioDetails.Date}}</h2>
+          <h2> Duration: {{audioDetails.Duration}}</h2>
+        </a>
+        <div class="item item-divider"> September </div>
+        <a ng-repeat="audioDetails in audioSeptember" class="item item-thumbnail-left">
+          <img src="{{audioDetails.Avatar}}">
+          <h2> Preacher:{{audioDetails.Preacher}}</h2>
+          <h2> Topic: {{audioDetails.Topic}}</h2>
+          <h2> Date: {{audioDetails.Date}}</h2>
+          <h2> Duration: {{audioDetails.Duration}}</h2>
+        </a>
+        <div class="item item-divider"> October </div>
+        <a ng-repeat="audioDetails in audioOctober" class="item item-thumbnail-left">
+          <img src="{{audioDetails.Avatar}}">
+          <h2> Preacher:{{audioDetails.Preacher}}</h2>
+          <h2> Topic: {{audioDetails.Topic}}</h2>
+          <h2> Date: {{audioDetails.Date}}</h2>
+          <h2> Duration: {{audioDetails.Duration}}</h2>
+        </a>
+
+      </div>
+    </ion-content>
+</ion-view>
