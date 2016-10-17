@@ -1,13 +1,33 @@
 angular.module('app.controllers', [])
 
 .controller('aUDIOCtrl', ['$scope', '$stateParams', '$firebaseObject','$http','slideshow',
-  function ($scope, $stateParams, $firebaseObject,$http,slideshow) {
+  function ($scope, $stateParams, $firebaseObject,$http,slideshow,$cordovaMedia) {
 
     var fb = new Firebase('https://jhtapp-95e09.firebaseio.com/audio');
     $scope.audioAugust = $firebaseObject(fb.child('August'));
     $scope.audioSeptember = $firebaseObject(fb.child('September'));
     $scope.audioOctober = $firebaseObject(fb.child('October'));
     //console.log($scope.audio);
+
+
+    var src_ = "www/js/princelarry.mp3";
+    var media =$cordovaMedia.newMedia(src_);
+
+    $scope.playMedia = function() {
+      media.play();
+    };
+
+    $scope.pauseMedia = function() {
+      media.pause();
+    };
+
+    $scope.stopMedia = function() {
+      media.stop();
+    };
+
+    $scope.$on('destroy', function() {
+      media.release();
+    });
 
 }])
 

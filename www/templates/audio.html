@@ -7,28 +7,34 @@
           <div class="item item-divider"> August </div>
         <a ng-repeat="audioDetails in audioAugust" class="item item-thumbnail-left" style="font-size: x-small;">
           <img src="{{audioDetails.Avatar}}">
-          <h2> Preacher:{{audioDetails.Preacher}}</h2>
-          <h2> Topic: {{audioDetails.Topic}}</h2>
-          <h2> Date: {{audioDetails.Date}}</h2>
-          <h2> Duration: {{audioDetails.Duration}}</h2>
+          <h3> Preacher:{{audioDetails.Preacher}}</h3>
+          <h3> Topic: {{audioDetails.Topic}}</h3>
+          <h3> Date: {{audioDetails.Date}}</h3>
+          <h3> Duration: {{audioDetails.Duration}}</h3>
         </a>
         <div class="item item-divider"> September </div>
         <a ng-repeat="audioDetails in audioSeptember" class="item item-thumbnail-left">
           <img src="{{audioDetails.Avatar}}">
-          <h2> Preacher:{{audioDetails.Preacher}}</h2>
-          <h2> Topic: {{audioDetails.Topic}}</h2>
-          <h2> Date: {{audioDetails.Date}}</h2>
-          <h2> Duration: {{audioDetails.Duration}}</h2>
+          <h3> Preacher:{{audioDetails.Preacher}}</h3>
+          <h3> Topic: {{audioDetails.Topic}}</h3>
+          <h3> Date: {{audioDetails.Date}}</h3>
+          <h3> Duration: {{audioDetails.Duration}}</h3>
         </a>
         <div class="item item-divider"> October </div>
         <a ng-repeat="audioDetails in audioOctober" class="item item-thumbnail-left">
           <img src="{{audioDetails.Avatar}}">
-          <h2> Preacher:{{audioDetails.Preacher}}</h2>
-          <h2> Topic: {{audioDetails.Topic}}</h2>
-          <h2> Date: {{audioDetails.Date}}</h2>
-          <h2> Duration: {{audioDetails.Duration}}</h2>
+          <h3> Preacher:{{audioDetails.Preacher}}</h3>
+          <h3> Topic: {{audioDetails.Topic}}</h3>
+          <h3> Date: {{audioDetails.Date}}</h3>
+          <h3> Duration: {{audioDetails.Duration}}</h3>
         </a>
 
       </div>
+
+      <button class = "button" ng-click = "playMedia()">PLAY</button>
+
+      <button class = "button" ng-click = "pauseMedia()">PAUSE</button>
+
+      <button class = "button" ng-click = "stopMedia()">STOP</button>
     </ion-content>
 </ion-view>
