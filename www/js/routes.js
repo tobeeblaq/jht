@@ -68,6 +68,17 @@ angular.module('app.routes', [])
     controller: 'aBOUTUSCtrl'
   })
 
+    .state('contact_us', {
+      url: '/contact_us',
+      templateUrl: 'templates/contact_us.html',
+      controller: 'contact_usCtrl'
+    })
+    .state('weekly', {
+      url: '/weekly',
+      templateUrl: 'templates/weekly.html',
+      controller: 'weeklyCtrl'
+    })
+
 $urlRouterProvider.otherwise('/page1/home')
 
 

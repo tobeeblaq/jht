@@ -42,17 +42,10 @@ function ($scope, $stateParams) {
 
   $scope.variable = $firebaseObject(fb.child('slidepictures'));
 
-
-
-
-
-
-
-
-
-
 }])
 
+  
+  
 .controller('eVENTCtrl', ['$scope', '$stateParams',
 function ($scope, $stateParams) {
 
@@ -64,6 +57,9 @@ function ($scope, $stateParams) {
 
 
 }])
+  
+  
+  
 
 .controller('tRANSPORTCtrl', ['$scope', '$stateParams','$cordovaGeolocation',
 function ($scope, $stateParams,$cordovaGeolocation) {
@@ -92,5 +88,21 @@ function ($scope, $stateParams,$cordovaGeolocation) {
 
   }, function(error){
     console.log("Could not get location");
-  });
-}])
+  });}])
+  
+  
+
+
+  .controller('weeklyCtrl' ,['$scope', '$stateParams',
+  function ($scope, $stateParams) {
+
+  }])
+  
+  
+  
+
+  .controller('contact_usCtrl' ,['$scope', '$stateParams',
+    function ($scope, $stateParams) {
+
+    }])
+
