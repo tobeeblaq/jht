@@ -1,9 +1,9 @@
-<ion-view title="HOME" id="page6" ng-controller="hOMECtrl" style="background-image: url('../img/background_img.jpg');">
+<ion-view title="HOME" id="page6" ng-controller="hOMECtrl" >
     <ion-content padding="true" class="has-header">
 
     <div class="lists">
       <a ng-repeat="fileName in variable" class="item item-thumbnail-left">
-        <img src="{{fileName.fileUrl}}">
+        <img ng-src="{{fileName.fileUrl}}">
         <h2>{{fileName.file_description}}</h2>
         <h2>{{fileName.filename}}</h2>
       </a>

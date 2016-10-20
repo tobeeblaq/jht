@@ -1,4 +1,4 @@
-<ion-view title="AUDIO" id="page3" style="background-image: url('../img/background_img.jpg');">
+<ion-view title="AUDIO" id="page3" >
     <ion-content padding="true" class="has-header">
         <p id="aUDIO-markdown5" style="color:#000000;">audio page</p>
 
@@ -6,15 +6,18 @@
 
           <div class="item item-divider"> August </div>
         <a ng-repeat="audioDetails in audioAugust" class="item item-thumbnail-left" style="font-size: x-small;">
-          <img src="{{audioDetails.Avatar}}">
+
+
+          <img src="../img/audio_wave.png">
           <h3> Preacher:{{audioDetails.Preacher}}</h3>
           <h3> Topic: {{audioDetails.Topic}}</h3>
           <h3> Date: {{audioDetails.Date}}</h3>
           <h3> Duration: {{audioDetails.Duration}}</h3>
+           <audio ng-src="{{trusted_src(audio_file)}}" type="audio">Play</audio>
         </a>
         <div class="item item-divider"> September </div>
         <a ng-repeat="audioDetails in audioSeptember" class="item item-thumbnail-left">
-          <img src="{{audioDetails.Avatar}}">
+          <img src="../img/audio_wave.png">
           <h3> Preacher:{{audioDetails.Preacher}}</h3>
           <h3> Topic: {{audioDetails.Topic}}</h3>
           <h3> Date: {{audioDetails.Date}}</h3>
@@ -22,7 +25,7 @@
         </a>
         <div class="item item-divider"> October </div>
         <a ng-repeat="audioDetails in audioOctober" class="item item-thumbnail-left">
-          <img src="{{audioDetails.Avatar}}">
+          <img src="../img/audio_wave.png">
           <h3> Preacher:{{audioDetails.Preacher}}</h3>
           <h3> Topic: {{audioDetails.Topic}}</h3>
           <h3> Date: {{audioDetails.Date}}</h3>
@@ -31,10 +34,6 @@
 
       </div>
 
-      <button class = "button" ng-click = "playMedia()">PLAY</button>
-
-      <button class = "button" ng-click = "pauseMedia()">PAUSE</button>
-
-      <button class = "button" ng-click = "stopMedia()">STOP</button>
+      <button class="button" ng-click="playM()">Play</button>
     </ion-content>
 </ion-view>

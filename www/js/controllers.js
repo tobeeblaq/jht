@@ -1,7 +1,8 @@
 angular.module('app.controllers', [])
 
-.controller('aUDIOCtrl', ['$scope', '$stateParams', '$firebaseObject','$http','slideshow',
-  function ($scope, $stateParams, $firebaseObject,$http,slideshow,$cordovaMedia) {
+.controller('aUDIOCtrl', ['$scope', '$stateParams','$ionicPlatform', '$firebaseObject','$http','slideshow','$sce',
+  function ($scope, $stateParams,$ionicPlatform, $firebaseObject,$http,slideshow,$sce) {
+
 
     var fb = new Firebase('https://jhtapp-95e09.firebaseio.com/audio');
     $scope.audioAugust = $firebaseObject(fb.child('August'));
@@ -9,25 +10,23 @@ angular.module('app.controllers', [])
     $scope.audioOctober = $firebaseObject(fb.child('October'));
     //console.log($scope.audio);
 
+  /*  $ionicPlatform.ready(function () {
+      var src_ = "js/princelarry.mp3";
 
-    var src_ = "www/js/princelarry.mp3";
-    var media =$cordovaMedia.newMedia(src_);
+      new_src = '/android_asset/www/' + src_;  // Android needs the search path explicitly specified
 
-    $scope.playMedia = function() {
-      media.play();
-    };
+      var media = new Media(new_src, null, null, mediaStatusCallback);
+      $cordovaMedia.play(media);
 
-    $scope.pauseMedia = function() {
-      media.pause();
-    };
+    })*/
 
-    $scope.stopMedia = function() {
-      media.stop();
-    };
+    $scope.audio_file = '../js/pricelarry.mp3'
+    $scope.trusted_src = function (src) {
 
-    $scope.$on('destroy', function() {
-      media.release();
-    });
+      return $sce.trustAsResourceUrl(src);
+      //console.log()
+    }
+
 
 }])
 
@@ -44,8 +43,8 @@ function ($scope, $stateParams) {
 
 }])
 
-  
-  
+
+
 .controller('eVENTCtrl', ['$scope', '$stateParams',
 function ($scope, $stateParams) {
 
@@ -57,9 +56,9 @@ function ($scope, $stateParams) {
 
 
 }])
-  
-  
-  
+
+
+
 
 .controller('tRANSPORTCtrl', ['$scope', '$stateParams','$cordovaGeolocation',
 function ($scope, $stateParams,$cordovaGeolocation) {
@@ -89,17 +88,17 @@ function ($scope, $stateParams,$cordovaGeolocation) {
   }, function(error){
     console.log("Could not get location");
   });}])
-  
-  
+
+
 
 
   .controller('weeklyCtrl' ,['$scope', '$stateParams',
   function ($scope, $stateParams) {
 
   }])
-  
-  
-  
+
+
+
 
   .controller('contact_usCtrl' ,['$scope', '$stateParams',
     function ($scope, $stateParams) {
